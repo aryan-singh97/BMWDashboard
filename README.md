@@ -1,7 +1,3 @@
-const fs = require('fs');
-
-const readmeContent = `
-
 # CSV Data Analysis Tool
 
 This project is a web-based CSV data analysis tool that allows users to upload CSV files, visualize data using various plots and graphs, and perform interactive analysis.
