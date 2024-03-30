@@ -6,10 +6,18 @@ import csvParser from "csv-parser";
 import { createReadStream, unlinkSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import path from "path"; // Import path module to handle file paths
+import path from "path";
+import cors from "cors";
 
 const app = express();
 
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type",
+  })
+);
 // Multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
